@@ -15,7 +15,6 @@ O sistema é dividido em três perspectivas principais:
 
 -  **Listagem de Pães:** Visualiza todos os pães já cadastrados no sistema.
 
--  **CRUD Completo:** A interface oferece funcionalidade completa para Criar, Ler, Atualizar e Deletar os tipos de pão.
 
 2. **Visão do Padeiro**
 
