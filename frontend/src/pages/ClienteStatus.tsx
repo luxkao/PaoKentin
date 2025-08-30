@@ -59,16 +59,18 @@ function ClienteStatus() {
 
   return (
     <div>
-      <h1>Status das Fornadas</h1>
-      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(250px, 1fr))', gap: '20px' }}>
+      <h1 className="text-3xl font-bold mb-6">Status das Fornadas</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {statusList.map(({ pao, status, tempoRestanteSegundos }) => (
-          <div key={pao.id} style={{ border: `3px solid ${pao.corHex}`, borderRadius: '8px', padding: '16px' }}>
-            <h2 style={{ margin: 0, color: pao.corHex }}>{pao.nome}</h2>
-            <p style={{ fontSize: '1.5em', margin: '10px 0' }}>
-              <strong>Status:</strong> {status}
+          <div key={pao.id} className="bg-gray-800 p-6 border-2" style={{ borderColor: pao.corHex }}>
+            <h2 className="text-2xl font-bold mb-2" style={{ color: pao.corHex }}>
+              {pao.nome}
+            </h2>
+            <p className="text-lg">
+              <span className="font-bold">Status:</span> {status}
             </p>
             {status === 'Assando' && (
-              <p style={{ fontSize: '2em', fontWeight: 'bold', margin: 0 }}>
+              <p className="text-5xl font-bold mt-2">
                 {formatTime(tempoRestanteSegundos)}
               </p>
             )}

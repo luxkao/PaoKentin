@@ -49,26 +49,20 @@ function PadeiroDashboard() {
 
   return (
     <div>
-      <h1>Painel do Padeiro</h1>
-      <div style={{ display: 'flex', flexWrap: 'wrap', gap: '20px' }}>
+      <h1 className="text-3xl font-bold mb-6">Painel do Padeiro: Iniciar Fornada</h1>
+      <div className="flex flex-wrap gap-8">
         {paes.map(pao => (
           <button
             key={pao.id}
             onClick={() => handleIniciarFornada(pao.id)}
-            style={{
-              backgroundColor: pao.corHex,
-              padding: '40px',
-              fontSize: '24px',
-              cursor: 'pointer',
-              border: '2px solid black',
-              borderRadius: '10px'
-            }}
+            style={{ backgroundColor: pao.corHex }}
+            className="p-10 text-2xl font-bold text-black border-4 border-black hover:scale-105 transition-transform"
           >
             {pao.nome}
           </button>
         ))}
       </div>
-      {feedback && <p style={{ marginTop: '20px', fontSize: '18px' }}>{feedback}</p>}
+      {feedback && <p className="mt-6 text-xl p-4 bg-gray-800 border-2 border-white">{feedback}</p>}
     </div>
   );
 }
